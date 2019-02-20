@@ -1,0 +1,15 @@
+{
+  "name": "docker-guide",
+  "version": "1.0.0",
+  "description": "Docker training",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Oleg Yapparov <oyapparov@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "redis": "^2.8.0"
+  }
+}

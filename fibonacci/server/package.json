@@ -6,7 +6,8 @@
     "pg": "^7.8.1",
     "redis": "^2.8.0",
     "cors": "^2.8.5",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "body-parser": "^1.18.3"
   },
   "scripts": {
     "start": "node index.js",

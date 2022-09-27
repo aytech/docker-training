@@ -9,7 +9,7 @@
   "author": "Oleg Yapparov <oyapparov@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "*",
     "redis": "^2.8.0"
   }
 }

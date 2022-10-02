@@ -12,7 +12,7 @@ function App() {
         <header className="App-header">
           <img src={ logo } className="App-logo" alt="logo" />
           <p>
-            I am the main component
+            Fibonacci calculator
           </p>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>

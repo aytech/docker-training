@@ -33,15 +33,15 @@ const redisClient = redis.createClient({
 const redisPublisher = redisClient.duplicate()
 
 // Express route handlers
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.send("Hi")
 })
-app.get("/values/all", async (req, res) => {
+app.get("/values/all", async (_, res) => {
   const values = await pgClient.query("SELECT * FROM values")
   res.send(values.rows)
 })
-app.get("/values/current", async (req, res) => {
-  redisClient.hgetall("values", (error, values) => {
+app.get("/values/current", async (_, res) => {
+  redisClient.hgetall("values", (_, values) => {
     res.send(values)
   })
 })
@@ -56,6 +56,6 @@ app.post("/values", async (req, res) => {
   res.send({ working: true })
 })
 
-app.listen(5000, error => {
+app.listen(5000, () => {
   console.log("Listening")
 })

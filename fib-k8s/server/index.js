@@ -47,12 +47,16 @@ app.get("/values/current", async (_, res) => {
 })
 app.post("/values", async (req, res) => {
   const index = req.body.index
+  console.log(`Reveived index ${ index }`)
   if (parseInt(index) > 40) {
     res.status(422).send("Index oo high")
   }
   redisClient.hset("values", index, "Nothing yet!")
+  console.log(`Posting ${ index } to Redis`)
   redisPublisher.publish("insert", index)
+  console.log(`Publishing Insert event with ${ index } to Redis`)
   pgClient.query("INSERT INTO values(number) VALUES($1)", [ index ])
+  console.log(`Inserting ${ index } to Postgres`)
   res.send({ working: true })
 })
 

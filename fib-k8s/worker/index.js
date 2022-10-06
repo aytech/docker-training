@@ -14,6 +14,7 @@ function fib(index) {
 }
 
 subscription.on("message", (_, message) => {
+  console.log(`Received message ${ message }`)
   redisClient.hset("values", message, fib(parseInt(message)))
 })
 subscription.subscribe("insert")
